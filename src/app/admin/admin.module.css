@@ -1,0 +1,475 @@
+.layout {
+    display: flex;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 260px;
+    background: #0c0c0e;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    padding: 1.5rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 1.5rem 2rem;
+    font-family: var(--font-display);
+}
+
+.logoIcon {
+    width: 32px;
+    height: 32px;
+    background: var(--primary);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: #fff;
+    font-size: 0.875rem;
+}
+
+.logoText {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.navSection {
+    margin-bottom: 2rem;
+}
+
+.navGroup {
+    margin-bottom: 2rem;
+}
+
+.groupTitle {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--foreground-muted);
+    padding: 0 1.5rem 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.navItem,
+.navItemActive {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9375rem;
+    gap: 0.75rem;
+    transition: all 0.2s ease;
+    border-radius: 0;
+    /* Keep it simple and flush unless specifically styled otherwise */
+}
+
+.navItem {
+    color: var(--foreground-muted);
+    font-weight: 500;
+}
+
+.navItem:hover {
+    color: var(--foreground);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.navItemActive {
+    background: rgba(217, 70, 239, 0.08);
+    color: var(--primary);
+    font-weight: 600;
+    border-left: 3px solid var(--primary);
+}
+
+.navIcon {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.badge {
+    margin-left: auto;
+    background: var(--surface-highlight);
+    color: var(--foreground-muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.navItemActive .badge {
+    background: var(--primary);
+    color: white;
+    border: none;
+}
+
+.logoutBtn {
+    margin: auto 0.75rem 0;
+    padding: 0.75rem 0.75rem;
+    color: var(--foreground-muted);
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.2s;
+}
+
+.logoutBtn:hover {
+    color: #ef4444;
+}
+
+/* Content Area */
+.contentArea {
+    flex: 1;
+    margin-left: 260px;
+    display: flex;
+    flex-direction: column;
+}
+
+.topHeader {
+    height: 70px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    background: #09090b;
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+}
+
+.breadcrumbItem {
+    color: var(--foreground-muted);
+}
+
+.separator {
+    color: var(--border);
+}
+
+.breadcrumbActive {
+    color: var(--foreground);
+    font-weight: 500;
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.viewSiteBtn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.viewSiteBtn:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.notification {
+    color: var(--foreground-muted);
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+.profileAvatar {
+    width: 36px;
+    height: 36px;
+    background: #d946ef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: white;
+}
+
+.main {
+    padding: 2.5rem;
+    background: #09090b;
+    min-height: calc(100vh - 70px);
+}
+
+/* Dashboard Page Grid */
+.dashboardGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.welcomeSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+}
+
+.welcomeText h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.welcomeText p {
+    color: var(--foreground-muted);
+    font-size: 0.9375rem;
+}
+
+.btnNewPost {
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 0.85rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btnNewPost:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(217, 70, 239, 0.3);
+}
+
+/* Stats Cards */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.statCard {
+    background: #121215;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.statHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.statIcon {
+    width: 40px;
+    height: 40px;
+    background: rgba(217, 70, 239, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.statTrend {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.statTrendMuted {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--foreground-muted);
+}
+
+.statValue {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.statLabel {
+    font-size: 0.8125rem;
+    color: var(--foreground-muted);
+}
+
+/* Recent Posts Card */
+.contentCard {
+    background: #121215;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.cardHeader {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardHeader h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.tableContainer {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    text-align: left;
+    padding: 1rem 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--foreground-muted);
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border);
+}
+
+.table td {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
+    color: var(--foreground-muted);
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.postTitleCell {
+    color: var(--foreground);
+    font-weight: 600;
+    font-size: 0.9375rem;
+}
+
+.statusBadge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.statusPublished {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.statusDraft {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+.tagBadge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: rgba(139, 92, 246, 0.1);
+    color: #8b5cf6;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Widgets Column */
+.widgetsCol {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.widgetCard {
+    background: #121215;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.widgetCard h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+
+/* Activity Timeline */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.timelineItem {
+    display: flex;
+    gap: 1rem;
+    position: relative;
+}
+
+.timelineDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+}
+
+.timelineTitle {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.timelineTime {
+    font-size: 0.8125rem;
+    color: var(--foreground-muted);
+}
+
+.commentPreview {
+    background: #09090b;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-top: 0.75rem;
+    font-style: italic;
+    font-size: 0.8125rem;
+    color: var(--foreground-muted);
+    border: 1px solid var(--border);
+}
