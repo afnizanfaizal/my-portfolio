@@ -9,8 +9,8 @@
   package = "@netlify/plugin-nextjs"
 
 [build.environment]
-  # Node version
-  NODE_VERSION = "18"
+  # Node version (Next.js 16 requires Node 20+)
+  NODE_VERSION = "20"
 
 # Redirects for client-side routing
 [[redirects]]
