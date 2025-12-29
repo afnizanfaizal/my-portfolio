@@ -81,8 +81,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                         {`
                             #nuclear-fix p, #nuclear-fix div, #nuclear-fix span, #nuclear-fix h1, #nuclear-fix h2, #nuclear-fix h3, #nuclear-fix h4, #nuclear-fix h5, #nuclear-fix h6, #nuclear-fix li, #nuclear-fix a {
                                 word-break: normal !important;
-                                word-wrap: normal !important;
-                                overflow-wrap: normal !important;
+                                word-wrap: break-word !important;
+                                overflow-wrap: break-word !important;
                                 hyphens: none !important;
                                 -webkit-hyphens: none !important;
                                 -moz-hyphens: none !important;
