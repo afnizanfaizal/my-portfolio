@@ -78,21 +78,17 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
                     <div className={styles.divider} />
 
-                    {/* Content Rendering: Supports both Legacy HTML and New Plain Text */}
-                    {post.content.trim().startsWith('<') ? (
-                        <div
-                            className={`${styles.content} ${styles.richTextContent}`}
-                            dangerouslySetInnerHTML={{
-                                __html: post.content
-                                    .replace(/text-align:\s*justify/gi, 'text-align: left')
-                                    .replace(/text-align-last:\s*justify/gi, 'text-align-last: left')
-                            }}
-                        />
-                    ) : (
-                        <div className={styles.content} style={{ whiteSpace: 'pre-wrap' }}>
-                            {post.content}
-                        </div>
-                    )}
+
+                    <div className={styles.divider} />
+
+                    <div
+                        className={`${styles.content} ${styles.richTextContent}`}
+                        dangerouslySetInnerHTML={{
+                            __html: post.content
+                                .replace(/text-align:\s*justify/gi, 'text-align: left')
+                                .replace(/text-align-last:\s*justify/gi, 'text-align-last: left')
+                        }}
+                    />
                 </div>
             </div>
         </article>

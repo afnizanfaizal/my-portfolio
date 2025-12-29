@@ -225,7 +225,9 @@
 .content div {
     white-space: normal !important;
     word-break: normal !important;
-    overflow-wrap: normal !important;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: normal;
 }
 
 /* Mobile-specific fix */
@@ -241,7 +243,8 @@
         word-break: normal !important;
         overflow-wrap: break-word !important;
         /* Allow breaking only for very long words/URLs */
-        hyphens: none !important;
+        hyphens: auto !important;
+        /* Allow hyphens on mobile */
     }
 
     .richTextContent {

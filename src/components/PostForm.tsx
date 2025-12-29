@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { BlogPost } from '@/lib/posts';
 import styles from './PostForm.module.css';
-// import RichTextEditor from './RichTextEditor';
+import RichTextEditor from './RichTextEditor';
 import { useAuth } from '@/lib/hooks/useAuth';
 import { Taxonomy, getCategories, getTags } from '@/lib/taxonomy';
 import { useEffect } from 'react';
@@ -154,11 +154,10 @@ export default function PostForm({ initialData, onSubmit, loading, title }: Post
                                 <strong>⚠️ Post Too Large:</strong> You have exceeded the 1MB Firestore limit. This is usually caused by large images pasted directly into the editor. Please remove the images and use "Featured Image" or paste direct image URLs instead.
                             </div>
                         )}
-                        <textarea
-                            className={styles.contentTextarea}
+                        <RichTextEditor
                             value={formData.content}
-                            onChange={(e) => setFormData(prev => ({ ...prev, content: e.target.value }))}
-                            placeholder="Start writing your awesome story... (Markdown supported)"
+                            onChange={(content) => setFormData(prev => ({ ...prev, content }))}
+                            placeholder="Start writing your awesome story..."
                         />
                     </div>
 
