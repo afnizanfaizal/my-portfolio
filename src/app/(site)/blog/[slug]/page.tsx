@@ -81,12 +81,33 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
                     <div className={styles.divider} />
 
+
+                    <div className={styles.divider} />
+
+                    {/* Nuclear Option: Inline Style Injection to Force CSS */}
+                    <style>
+                        {`
+                            #nuclear-fix p, #nuclear-fix div, #nuclear-fix span, #nuclear-fix h1, #nuclear-fix h2, #nuclear-fix h3, #nuclear-fix h4, #nuclear-fix h5, #nuclear-fix h6, #nuclear-fix li, #nuclear-fix a {
+                                word-break: normal !important;
+                                word-wrap: normal !important;
+                                overflow-wrap: normal !important;
+                                hyphens: none !important;
+                                -webkit-hyphens: none !important;
+                                -moz-hyphens: none !important;
+                                white-space: normal !important;
+                            }
+                        `}
+                    </style>
+
                     <div
+                        id="nuclear-fix"
                         className={`${styles.content} ${styles.richTextContent}`}
                         dangerouslySetInnerHTML={{
                             __html: post.content
                                 .replace(/text-align:\s*justify/gi, 'text-align: left')
                                 .replace(/text-align-last:\s*justify/gi, 'text-align-last: left')
+                                .replace(/\u00AD/g, '') // Remove soft hyphens
+                                .replace(/&shy;/g, '') // Remove HTML entity soft hyphens
                         }}
                     />
                 </div>

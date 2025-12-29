@@ -243,8 +243,8 @@
         word-break: normal !important;
         overflow-wrap: break-word !important;
         /* Allow breaking only for very long words/URLs */
-        hyphens: auto !important;
-        /* Allow hyphens on mobile */
+        hyphens: none !important;
+        /* Force disable hyphens to stop fragmentation */
     }
 
     .richTextContent {
