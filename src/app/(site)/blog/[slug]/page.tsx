@@ -3,7 +3,6 @@ import Image from 'next/image';
 import styles from './page.module.css';
 import { getPostBySlug } from '@/lib/posts';
 import ViewTracker from '@/components/ViewTracker';
-import ShareButton from '@/components/ShareButton';
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
@@ -72,7 +71,6 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                         <div className={styles.excerpt}>
                             {post.excerpt || 'Discover the hidden details and stories behind this amazing journey.'}
                         </div>
-                        <ShareButton />
                     </div>
 
                     <div className={styles.divider} />
