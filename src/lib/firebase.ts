@@ -5,12 +5,12 @@ import { getStorage } from 'firebase/storage';
 
 // Replace with your Firebase project configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCxyZ9XH67BFA6U5TPXQr5H2EuckN7WjaQ",
-    authDomain: "my-blog-b12b8.firebaseapp.com",
-    projectId: "my-blog-b12b8",
-    storageBucket: "my-blog-b12b8.firebasestorage.app",
-    messagingSenderId: "684288978440",
-    appId: "1:684288978440:web:9885a934b3dcf7a4ae6bbd",
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
     measurementId: "G-LZB8G8LC03"
 };
 
