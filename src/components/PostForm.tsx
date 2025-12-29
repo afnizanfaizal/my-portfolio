@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { BlogPost } from '@/lib/posts';
 import styles from './PostForm.module.css';
 import RichTextEditor from './RichTextEditor';
-import { useAuth } from '@/lib/hooks/useAuth';
 import { Taxonomy, getCategories, getTags } from '@/lib/taxonomy';
 import { useEffect } from 'react';
 
