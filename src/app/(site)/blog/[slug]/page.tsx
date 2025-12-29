@@ -97,8 +97,5 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             </div>
         </article>
     );
-                </div >
-            </div >
-        </article >
-    );
+
 }
