@@ -87,6 +87,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                                 .replace(/text-align-last:\s*justify/gi, 'text-align-last: left')
                                 .replace(/\u00AD/g, '') // Remove soft hyphens
                                 .replace(/&shy;/g, '') // Remove HTML entity soft hyphens
+                                .replace(/\u00A0/g, ' ') // Replace non-breaking spaces with normal space
+                                .replace(/&nbsp;/g, ' ') // Replace HTML entity non-breaking spaces
                         }}
                     />
                 </div>
