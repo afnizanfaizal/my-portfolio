@@ -75,8 +75,24 @@
     font-family: inherit;
     font-size: 0.9375rem;
     min-height: 120px;
-    resize: none;
+    resize: vertical;
     outline: none;
+    line-height: 1.6;
+}
+
+.contentTextarea {
+    width: 100%;
+    background: #09090b;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    color: var(--foreground);
+    font-family: inherit;
+    font-size: 0.9375rem;
+    min-height: 500px;
+    resize: vertical;
+    outline: none;
+    line-height: 1.6;
 }
 
 .excerptHelp {
