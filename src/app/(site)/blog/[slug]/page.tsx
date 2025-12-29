@@ -77,21 +77,6 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     <div className={styles.divider} />
 
                     {/* Nuclear Option: Inline Style Injection to Force CSS */}
-                    <style>
-                        {`
-                            #nuclear-fix p, #nuclear-fix div, #nuclear-fix span, #nuclear-fix h1, #nuclear-fix h2, #nuclear-fix h3, #nuclear-fix h4, #nuclear-fix h5, #nuclear-fix h6, #nuclear-fix li, #nuclear-fix a {
-                                word-break: normal !important;
-                                word-wrap: break-word !important;
-                                overflow-wrap: break-word !important;
-                                hyphens: none !important;
-                                -webkit-hyphens: none !important;
-                                -moz-hyphens: none !important;
-                                white-space: normal !important;
-                                max-width: 100% !important;
-                                box-sizing: border-box !important;
-                            }
-                        `}
-                    </style>
 
                     <div
                         id="nuclear-fix"

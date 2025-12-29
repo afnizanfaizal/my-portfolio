@@ -194,61 +194,44 @@
     text-align: center;
 }
 
-/* Universal hyphenation fix for all text content */
-.content *:not(img):not(code):not(pre) {
-    -webkit-hyphens: none !important;
-    -moz-hyphens: none !important;
-    -ms-hyphens: none !important;
-    hyphens: none !important;
-    word-break: keep-all !important;
-}
-
-/* Aggressive fix for text justification causing word breaks */
+/* Clean Slate Reset for Content Fragmentation & Overflow */
 .richTextContent,
-.richTextContent *,
-.richTextContent p,
-.richTextContent div {
-    text-align: left !important;
-    text-justify: none !important;
-    -webkit-hyphens: none !important;
-    -moz-hyphens: none !important;
-    -ms-hyphens: none !important;
-    hyphens: none !important;
-    word-break: keep-all !important;
-    overflow-wrap: break-word !important;
-}
-
-/* Final fix - use standard word wrapping */
 .richTextContent p,
 .richTextContent div,
-.content p,
-.content div {
-    white-space: normal !important;
+.richTextContent span,
+.richTextContent h1,
+.richTextContent h2,
+.richTextContent h3,
+.richTextContent h4,
+.richTextContent h5,
+.richTextContent h6,
+.richTextContent li,
+.richTextContent a,
+.content,
+.content * {
     word-break: normal !important;
-    white-space: normal;
-    word-break: normal;
-    overflow-wrap: normal;
+    overflow-wrap: break-word !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    -moz-hyphens: none !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+    text-align-last: left !important;
 }
 
-/* Mobile-specific fix */
+/* Specific fix for images to prevent overflow */
+.richTextContent img,
+.content img {
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 12px;
+}
+
+/* Mobile Adjustments */
 @media (max-width: 768px) {
-
-    .richTextContent,
-    .richTextContent *,
-    .content,
-    .content * {
-        text-align: left !important;
-        text-align-last: left !important;
-        white-space: normal !important;
-        word-break: normal !important;
-        overflow-wrap: break-word !important;
-        /* Allow breaking only for very long words/URLs */
-        hyphens: none !important;
-        /* Force disable hyphens to stop fragmentation */
-    }
-
     .richTextContent {
-        padding-right: var(--gap-xs);
-        /* Prevent text from hitting the edge */
+        padding-right: 2px; /* Micro-padding to guarantee no edge touching */
     }
 }
