@@ -73,14 +73,6 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                         </div>
                     </div>
 
-                    <div className={styles.divider} />
-
-
-                    <div className={styles.divider} />
-
-
-                    <div className={styles.divider} />
-
 
                     <div className={styles.divider} />
 
@@ -95,6 +87,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                                 -webkit-hyphens: none !important;
                                 -moz-hyphens: none !important;
                                 white-space: normal !important;
+                                max-width: 100% !important;
+                                box-sizing: border-box !important;
                             }
                         `}
                     </style>
